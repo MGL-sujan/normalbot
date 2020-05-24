@@ -1,0 +1,57 @@
+{
+  "name": "bot",
+  "version": "1.0.1",
+  "description": "A discord bot.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "none",
+    "start": "node bot.js"
+  },
+  "engines": {
+    "node": "^12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/abh80/test-bot"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Unknown",
+  "license": "Unlicense",
+  "dependencies": {
+    "all": "0.0.0",
+    "api": "^2.0.0",
+    "beautify": "0.0.8",
+    "canvas": "^2.6.1",
+    "clean-text-js": "^1.1.1",
+    "common-tags": "^1.8.0",
+    "country-data-list": "^1.1.9",
+    "d3": "^5.16.0",
+    "dateformat": "^3.0.3",
+    "discord-canvas": "^1.1.0",
+    "discord-ytdl-core": "^2.0.1",
+    "discord.js": "^12.2.0",
+    "erela.js": "^1.1.8",
+    "express": "^4.17.1",
+    "i18n-iso-countries": "^5.3.0",
+    "node-fetch": "^2.6.0",
+    "novelcovid": "^1.2.7",
+    "quick-db": "^1.0.5",
+    "quick.db": "^7.1.1",
+    "quick.eco": "^2.0.4",
+    "request": "^2.88.2",
+    "simple-fortnite-api": "^0.1.9",
+    "some": "^0.1.1",
+    "spotify": "^0.3.0",
+    "superagent": "^5.2.2",
+    "tweep": "^0.2.2",
+    "unirest": "^0.6.0",
+    "woeid": "^2.0.3",
+    "world-clock": "^1.4.0",
+    "world-cup-history": "^2.0.12",
+    "world-info": "^1.0.8",
+    "ytdl-core-discord": "^1.2.0",
+    "puppeteer": "^3.1.0"
+  }
+}
