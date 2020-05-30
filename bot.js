@@ -24,11 +24,12 @@ let prefix = '%'
 
 bot.on("ready", async () => {
   console.log("Bot is functional");
+  
   const statuses = [ '%help',`${bot.users.cache.size} users`,`${bot.guilds.cache.size} guilds`]
 
    setInterval(() => {
      let status = statuses[Math.floor(Math.random()* statuses.length)]
-    bot.user.setPresence({ activity: { name: status ,type: 'WATCHING' }, status: 'idle' })
+    bot.user.setPresence({ activity: { name: status ,type: 'WATCHING' }, status: 'dnd' })
    },10000)
 setInterval(()=>{
    var guild = bot.guilds.cache.keyArray() 

@@ -6,6 +6,10 @@ module.exports = bot => {
     bot.on("disconnect", () => reqEvent("disconnect") (bot))
     bot.on("warn", reqEvent("warn"));
     bot.on("error", reqEvent("error"));
+    bot.on('messageDelete',async message =>{
+      db.set(`snipe_${message.channel.id}`,message.content)
+      db.set(`snipe1_${message.channel.id}`, message.author)
+    })
     bot.on("message",async message =>{
       let prefix = db.fetch(`prefix_${message.guild.id}`)
       if(message.channel.type === 'dm') return

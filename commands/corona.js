@@ -1,13 +1,38 @@
-const {MessageEmbed} = require("discord.js")
+const {MessageEmbed,MessageAttachment} = require("discord.js")
 const { NovelCovid } = require("novelcovid");
 const track = new NovelCovid();
 const countries = require("i18n-iso-countries");
+const puppeteer = require('puppeteer')
 
 
 
 module.exports.run = async (bot,message,args) => {
   if(!args[0]) {
-     let corona = await track.all();
+    message.channel.startTyping()
+   const browser = await puppeteer.launch(
+    {args:[
+      '--no-sandbox',
+      'disable-setuid-sandbox',
+      '--headless',
+      '--disable-gpu'
+    ]
+    })
+   
+  const page = await browser.newPage()
+
+  // set the size of the viewport, so our screenshot will have the desired size
+  await page.setViewport({
+      width: 1280,
+      height: 800
+  })
+
+ await page.goto(`https://news.google.com/covid19/map?hl=en-US&gl=US&ceid=US:en`)
+ let img = await page.screenshot({fullpage:true})
+ let attachment = new MessageAttachment(img,'screen.png')
+ message.channel.send(attachment)
+ await browser.close();
+    message.channel.stopTyping(true)
+   /*  let corona = await track.all();
      let embed = new MessageEmbed()
       .setThumbnail("https://i.ytimg.com/vi/G9YzH3WEh70/maxresdefault.jpg")
       .setTitle("Global Cases")
@@ -20,7 +45,7 @@ module.exports.run = async (bot,message,args) => {
       .addField("Today's Deaths", corona.todayDeaths, true)
       .addField("Active Cases", corona.active, true);
       
-      return message.channel.send(embed)
+      return message.channel.send(embed)*/
     
       
       
